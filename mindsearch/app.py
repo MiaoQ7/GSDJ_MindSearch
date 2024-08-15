@@ -1,6 +1,7 @@
 import asyncio
 import json
 import logging
+import os
 from copy import deepcopy
 from dataclasses import asdict
 from typing import Dict, List, Union
@@ -32,7 +33,8 @@ from mindsearch.agent import init_agent
 
 # args = parse_arguments()
 lang = 'en'
-model_format = 'internlm_server'
+model_format = 'gpt4'
+
 app = FastAPI(docs_url='/')
 
 app.add_middleware(CORSMiddleware,

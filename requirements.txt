@@ -1,15 +1,17 @@
 duckduckgo_search==5.3.1b1
 einops
 fastapi
-gradio
+beautifulsoup4
+#git+https://github.com/InternLM/lagent.git
+#gradio
 janus
-lmdeploy
+#lmdeploy
+# lmdeploy==0.2.3
+# vllm
 pyvis
 sse-starlette
 termcolor
-transformers==4.41.0
 uvicorn
-# lagent
 arxiv
 distro
 filelock
@@ -17,20 +19,10 @@ func_timeout
 griffe
 json5
 jsonschema
-jupyter
-jupyter_client
+#jupyter
+#jupyter_client
 phx-class-registry
 requests
 streamlit
 tiktoken
 timeout-decorator
-typing-extensions
-
-google-search-results
-lmdeploy>=0.2.3
-pillow
-python-pptx
-timeout_decorator
-torch
-transformers>=4.34
-vllm>=0.3.3
