@@ -1,12 +1,28 @@
 duckduckgo_search==5.3.1b1
 einops
 fastapi
-git+https://github.com/InternLM/lagent.git
-gradio
+beautifulsoup4
+#git+https://github.com/InternLM/lagent.git
+#gradio
 janus
-lmdeploy
+#lmdeploy
+# lmdeploy==0.2.3
+# vllm
 pyvis
 sse-starlette
 termcolor
-transformers==4.41.0
 uvicorn
+arxiv
+distro
+filelock
+func_timeout
+griffe
+json5
+jsonschema
+#jupyter
+#jupyter_client
+phx-class-registry
+requests
+streamlit
+tiktoken
+timeout-decorator

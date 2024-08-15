@@ -15,22 +15,24 @@ from sse_starlette.sse import EventSourceResponse
 from mindsearch.agent import init_agent
 
 
-def parse_arguments():
-    import argparse
-    parser = argparse.ArgumentParser(description='MindSearch API')
-    parser.add_argument('--lang', default='cn', type=str, help='Language')
-    parser.add_argument('--model_format',
-                        default='internlm_server',
-                        type=str,
-                        help='Model format')
-    parser.add_argument('--search_engine',
-                       default='DuckDuckGoSearch',
-                       type=str,
-                       help='Search engine')
-    return parser.parse_args()
+# def parse_arguments():
+#     import argparse
+#     parser = argparse.ArgumentParser(description='MindSearch API')
+#     parser.add_argument('--lang', default='cn', type=str, help='Language')
+#     parser.add_argument('--model_format',
+#                         default='internlm_server',
+#                         type=str,
+#                         help='Model format')
+#     parser.add_argument('--search_engine',
+#                        default='DuckDuckGoSearch',
+#                        type=str,
+#                        help='Search engine')
+#     return parser.parse_args()
 
 
-args = parse_arguments()
+# args = parse_arguments()
+lang = 'en'
+model_format = 'internlm_server'
 app = FastAPI(docs_url='/')
 
 app.add_middleware(CORSMiddleware,
@@ -127,7 +129,7 @@ async def run(request: GenerationParams):
             await queue.wait_closed()
 
     inputs = request.inputs
-    agent = init_agent(lang=args.lang, model_format=args.model_format,search_engine=args.search_engine)
+    agent = init_agent(lang=lang, model_format=model_format)
     return EventSourceResponse(generate())
 
 
